@@ -1,0 +1,16 @@
+# Backend
+flask
+faiss-cpu
+sentence-transformers
+deltalake
+pandas
+pyarrow
+openai-whisper
+werkzeug # For file uploads
+
+# UI
+streamlit
+requests
+
+# For audio processing
+ffmpeg-python

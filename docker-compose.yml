@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    ports:
+      - '5001:5001'
+    volumes:
+      - ./data:/app/data
+    networks:
+      - vector-search-net
+
+  ui:
+    build:
+      context: .
+      dockerfile: Dockerfile.ui
+    ports:
+      - '8501:8501'
+    depends_on:
+      - backend
+    networks:
+      - vector-search-net
+
+networks:
+  vector-search-net:
+    driver: bridge
